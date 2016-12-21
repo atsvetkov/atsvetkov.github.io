@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Surfing the code</title>
-    <link>https://atsvetkov.github.io/</link>
+    <link>http://alexandertsvetkov.me/</link>
     <description>Recent content on Surfing the code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 16 Dec 2016 21:40:04 +0100</lastBuildDate>
-    <atom:link href="https://atsvetkov.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://alexandertsvetkov.me/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Coffee and Links - 3</title>
-      <link>https://atsvetkov.github.io/2016/12/coffee-and-links---3/</link>
+      <link>http://alexandertsvetkov.me/2016/12/coffee-and-links---3/</link>
       <pubDate>Fri, 16 Dec 2016 21:40:04 +0100</pubDate>
       
-      <guid>https://atsvetkov.github.io/2016/12/coffee-and-links---3/</guid>
+      <guid>http://alexandertsvetkov.me/2016/12/coffee-and-links---3/</guid>
       <description>
 
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://atsvetkov.github.io/images/coffee-and-links-3.jpg&#34; /&gt;
+        &lt;img src=&#34;http://alexandertsvetkov.me/images/coffee-and-links-3.jpg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -35,7 +35,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://atsvetkov.github.io/images/google_revenue.png&#34; /&gt;
+        &lt;img src=&#34;http://alexandertsvetkov.me/images/google_revenue.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -52,9 +52,9 @@
 &lt;h3 id=&#34;languages-and-frameworks:50d2f2ba86e07cf7d8879fd54889a47b&#34;&gt;Languages and frameworks&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;If you are already preparing your New Year resolutions and catching up with JavaScript is on the list, then you might want to check &lt;a href=&#34;https://medium.com/javascript-scene/top-javascript-frameworks-topics-to-learn-in-2017-700a397b711#.qe16jz7ue&#34;&gt;Top JavaScript Frameworks &amp;amp; Topics to Learn in 2017&lt;/a&gt;. Quite opinionated view, but makes a lot of sense. Choosing between top contenders, Angular 2 and Recat, personally I&amp;rsquo;d bet on and invest into the latter. And if you feel fed up with JavaScript frameworks, maybe refresh the core skills by taking &lt;a href=&#34;https://javascript30.com/&#34;&gt;free 30-day vanilla JavaScript course&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If you are already preparing your New Year resolutions and the list includes something like &lt;em&gt;catch up with JavaScript&lt;/em&gt;, then you might want to check out &lt;a href=&#34;https://medium.com/javascript-scene/top-javascript-frameworks-topics-to-learn-in-2017-700a397b711#.qe16jz7ue&#34;&gt;Top JavaScript Frameworks &amp;amp; Topics to Learn in 2017&lt;/a&gt;. Quite an opinionated view, but makes a lot of sense to me. Choosing between top contenders, Angular 2 and React, personally I&amp;rsquo;d bet on and invest into the latter. And if you feel fed up with the JavaScript frameworks altogether, maybe refresh the core skills by taking &lt;a href=&#34;https://javascript30.com/&#34;&gt;free 30-day vanilla JavaScript course&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;At some point most .NET developers have to deal with &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/f7ykdhsy.aspx&#34;&gt;reflection&lt;/a&gt;. And very soon after that they learn that reflection API is slow (by design) and has to be used with caution. &lt;a href=&#34;http://mattwarren.org/2016/12/14/Why-is-Reflection-slow/&#34;&gt;Matt Warren explains why and shows some benchmarks&lt;/a&gt;, demonstrating that, for instance, calling a property getter through a delegate is 8 times slower than the direct invocation, while calling it through reflection is 900 times slower. Always good to be aware of the relative speed.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;At some point most .NET developers have to deal with &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/f7ykdhsy.aspx&#34;&gt;reflection&lt;/a&gt;. And soon after they learn that reflection API is slow (by design) and has to be used with caution. &lt;a href=&#34;http://mattwarren.org/2016/12/14/Why-is-Reflection-slow/&#34;&gt;Matt Warren explains why and shows some benchmarks&lt;/a&gt;, demonstrating that, for instance, calling a property getter through a delegate is 8 times slower than the direct invocation, while calling it through reflection is 900 times slower. Always good to be aware of the relative speed.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;tools:50d2f2ba86e07cf7d8879fd54889a47b&#34;&gt;Tools&lt;/h3&gt;
@@ -82,7 +82,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://atsvetkov.github.io/images/resharper_heap_allocations.png&#34; /&gt;
+        &lt;img src=&#34;http://alexandertsvetkov.me/images/resharper_heap_allocations.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -97,7 +97,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://atsvetkov.github.io/images/radio_garden.png&#34; /&gt;
+        &lt;img src=&#34;http://alexandertsvetkov.me/images/radio_garden.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -123,7 +123,7 @@
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;How do you estimate the total number of German tanks only having several ones captured? &lt;a href=&#34;https://en.wikipedia.org/wiki/German_tank_problem&#34;&gt;An fascinating application of statistical theory to a very specific problem during World War II&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;How do you estimate the total number of German tanks only having several ones captured? &lt;a href=&#34;https://en.wikipedia.org/wiki/German_tank_problem&#34;&gt;A fascinating application of statistical theory to a very specific problem during World War II&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;TED is publishing a link to a selected talk every day in December, calling it &lt;a href=&#34;http://www.tedxbasel.com/txb-blog/?tag=31+days+of+ideas&#34;&gt;31 days of ideas&lt;/a&gt;. A nice and not-too-time-consuming way to learn ideas from various areas and get inspired. Highly recommended for broadening your horizons.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -132,14 +132,14 @@
     
     <item>
       <title>Practice makes perfect</title>
-      <link>https://atsvetkov.github.io/2016/12/practice-makes-perfect/</link>
+      <link>http://alexandertsvetkov.me/2016/12/practice-makes-perfect/</link>
       <pubDate>Tue, 06 Dec 2016 21:50:43 +0100</pubDate>
       
-      <guid>https://atsvetkov.github.io/2016/12/practice-makes-perfect/</guid>
+      <guid>http://alexandertsvetkov.me/2016/12/practice-makes-perfect/</guid>
       <description>
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://atsvetkov.github.io/images/practice_makes_perfect.jpg&#34; /&gt;
+        &lt;img src=&#34;http://alexandertsvetkov.me/images/practice_makes_perfect.jpg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -191,7 +191,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://atsvetkov.github.io/images/advent_of_code.png&#34; /&gt;
+        &lt;img src=&#34;http://alexandertsvetkov.me/images/advent_of_code.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -205,10 +205,10 @@
     
     <item>
       <title>Coffee and Links - 2</title>
-      <link>https://atsvetkov.github.io/2016/11/coffee-and-links---2/</link>
+      <link>http://alexandertsvetkov.me/2016/11/coffee-and-links---2/</link>
       <pubDate>Sat, 19 Nov 2016 14:17:47 +0100</pubDate>
       
-      <guid>https://atsvetkov.github.io/2016/11/coffee-and-links---2/</guid>
+      <guid>http://alexandertsvetkov.me/2016/11/coffee-and-links---2/</guid>
       <description>
 
 &lt;p&gt;This was a week of &lt;a href=&#34;https://connectevent.microsoft.com&#34;&gt;Microsoft Connect 2016&lt;/a&gt;, an event where yet another bunch of cool announcements were made. However, being a good software engineer means not restricting yourself to a single technology, so I have some awesome non-Microsoft things to share as well. Let&amp;rsquo;s jump straight in!&lt;/p&gt;
@@ -216,7 +216,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://atsvetkov.github.io/images/coffee-and-links-2.jpg&#34; /&gt;
+        &lt;img src=&#34;http://alexandertsvetkov.me/images/coffee-and-links-2.jpg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -255,7 +255,7 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://atsvetkov.github.io/images/iis_manager_preview.png&#34; /&gt;
+        &lt;img src=&#34;http://alexandertsvetkov.me/images/iis_manager_preview.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -287,7 +287,7 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
 &lt;p&gt;
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://atsvetkov.github.io/images/twitter_vi.png&#34; /&gt;
+        &lt;img src=&#34;http://alexandertsvetkov.me/images/twitter_vi.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -297,10 +297,10 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
     
     <item>
       <title>Coffee and Links - 1</title>
-      <link>https://atsvetkov.github.io/2016/11/coffee-and-links---1/</link>
+      <link>http://alexandertsvetkov.me/2016/11/coffee-and-links---1/</link>
       <pubDate>Sat, 12 Nov 2016 15:00:54 +0100</pubDate>
       
-      <guid>https://atsvetkov.github.io/2016/11/coffee-and-links---1/</guid>
+      <guid>http://alexandertsvetkov.me/2016/11/coffee-and-links---1/</guid>
       <description>
 
 &lt;p&gt;Sometimes I find interesting things on the web, which don&amp;rsquo;t belong to a single category. Just random articles or news about technology. Since I still want to share these findings and because I normally do this kind of reading at the start of the day, I will be publishing this as a &lt;em&gt;Coffee and links&lt;/em&gt; digest.&lt;/p&gt;
@@ -308,7 +308,7 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://atsvetkov.github.io/images/coffee-and-links-1.jpg&#34; /&gt;
+        &lt;img src=&#34;http://alexandertsvetkov.me/images/coffee-and-links-1.jpg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -327,7 +327,7 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;https://atsvetkov.github.io/images/AcclaimBadge.png&#34; /&gt;
+        &lt;img src=&#34;http://alexandertsvetkov.me/images/AcclaimBadge.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -369,10 +369,10 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
     
     <item>
       <title>Some facts about WiX</title>
-      <link>https://atsvetkov.github.io/2016/10/some-facts-about-wix/</link>
+      <link>http://alexandertsvetkov.me/2016/10/some-facts-about-wix/</link>
       <pubDate>Thu, 27 Oct 2016 22:20:54 +0200</pubDate>
       
-      <guid>https://atsvetkov.github.io/2016/10/some-facts-about-wix/</guid>
+      <guid>http://alexandertsvetkov.me/2016/10/some-facts-about-wix/</guid>
       <description>&lt;p&gt;Before we start, let me ask you a question: do you know what is the oldest still active open source .NET project?&lt;/p&gt;
 
 &lt;p&gt;Today I was again listening to awesome &lt;a href=&#34;https://www.dotnetrocks.com/&#34;&gt;.NET Rocks&lt;/a&gt; podcast and the guest was Rob Mensching, the guy behind &lt;a href=&#34;http://wixtoolset.org/&#34;&gt;Wix Toolset&lt;/a&gt;. WiX provides a bunch of tools to simplify the creation of MSI packages for Windows, and as far as I know, it is one of the most popular open-source implementations in that area. And it is also free! We use it for the product I am currently working on. Hell, even Microsoft is using it: &lt;a href=&#34;https://github.com/dotnet/cli/blob/rel/1.0.0/packaging/windows/clisdk/dotnet.wxs&#34;&gt;see for yourself&lt;/a&gt; that the current .NET Core installer is actually built with WiX! In fact, Rob Mensching used to work in Microsoft on setup and deployment for Office, Windows and Visual Studio. Obviously, he knows more about installers than most people do, enough to build a business around it. So he is now a CEO and a co-founder of &lt;a href=&#34;https://www.firegiant.com/&#34;&gt;Fire Giant&lt;/a&gt;, a company providing commercial support for WiX Toolset.&lt;/p&gt;
@@ -412,10 +412,10 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
     
     <item>
       <title>Current state of .NET</title>
-      <link>https://atsvetkov.github.io/2016/10/current-state-of-.net/</link>
+      <link>http://alexandertsvetkov.me/2016/10/current-state-of-.net/</link>
       <pubDate>Tue, 18 Oct 2016 22:22:41 +0200</pubDate>
       
-      <guid>https://atsvetkov.github.io/2016/10/current-state-of-.net/</guid>
+      <guid>http://alexandertsvetkov.me/2016/10/current-state-of-.net/</guid>
       <description>&lt;p&gt;Imagine a software developer working in a typical enterprise IT company. Let&amp;rsquo;s call him Johnny. Most of the time Johnny works with .NET applications. He&amp;rsquo;s been writing web apps since the days of ASP (he feels pretty comfortable with Web Forms and IIS after all these years), but he was always too busy doing &lt;em&gt;important things&lt;/em&gt; and never really had time to follow the news in the industry. Yeah, he heard some folks in another department are using &amp;ldquo;MVC&amp;rdquo;, and somebody mentioned something like &amp;ldquo;core&amp;rdquo; or &amp;ldquo;standard&amp;rdquo;. And some fellow .NET developers were even talking about Linux at the coffee machine. What? &lt;em&gt;.NET&lt;/em&gt; and &lt;em&gt;Linux&lt;/em&gt;? Weird!&lt;/p&gt;
 
 &lt;p&gt;Or is it?&lt;/p&gt;
@@ -467,16 +467,16 @@ dotnet run
 
 &lt;p&gt;Be like Johnny! Embrace change and learn amazing things!&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;(For some suggestions about which news to follow, take a look into my previous post about &lt;a href=&#34;https://atsvetkov.github.io/2016/10/staying-up-to-date-with-software-development-trends/&#34;&gt;Staying up-to-date with software development trends&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(For some suggestions about which news to follow, take a look into my previous post about &lt;a href=&#34;http://alexandertsvetkov.me/2016/10/staying-up-to-date-with-software-development-trends/&#34;&gt;Staying up-to-date with software development trends&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Staying up-to-date with software development trends</title>
-      <link>https://atsvetkov.github.io/2016/10/staying-up-to-date-with-software-development-trends/</link>
+      <link>http://alexandertsvetkov.me/2016/10/staying-up-to-date-with-software-development-trends/</link>
       <pubDate>Sun, 16 Oct 2016 16:51:55 +0200</pubDate>
       
-      <guid>https://atsvetkov.github.io/2016/10/staying-up-to-date-with-software-development-trends/</guid>
+      <guid>http://alexandertsvetkov.me/2016/10/staying-up-to-date-with-software-development-trends/</guid>
       <description>
 
 &lt;p&gt;Earlier this year I was assigned to a role of a technical lead in a small development team. This happened after working in the same team for more than a year and then being a part of a two-person architecture team focused on evaluating the microservices approach for a couple of months. At my current employer things are changing quickly and people are free to figure out what the idea actually was. So I am still looking for the meaning of the tech lead role, but definitely enjoying it already.&lt;/p&gt;
@@ -550,10 +550,10 @@ dotnet run
     
     <item>
       <title>Building a blog with Hugo, GitHub, Travis-CI and DigitalOcean - Part 1</title>
-      <link>https://atsvetkov.github.io/2016/08/building-a-blog-with-hugo-github-travis-ci-and-digitalocean---part-1/</link>
+      <link>http://alexandertsvetkov.me/2016/08/building-a-blog-with-hugo-github-travis-ci-and-digitalocean---part-1/</link>
       <pubDate>Sun, 28 Aug 2016 23:01:21 +0200</pubDate>
       
-      <guid>https://atsvetkov.github.io/2016/08/building-a-blog-with-hugo-github-travis-ci-and-digitalocean---part-1/</guid>
+      <guid>http://alexandertsvetkov.me/2016/08/building-a-blog-with-hugo-github-travis-ci-and-digitalocean---part-1/</guid>
       <description>&lt;p&gt;&lt;em&gt;With great power comes great responsibility&lt;/em&gt;, they say. In case of being a programmer, this sometimes means that achieving simple things may get complicated. I understand that WordPress essentially won as the blogging platform and you can setup your hosted blog in almost no time&amp;hellip; but then where is all the fun? On the other hand, putting on a pragmatic programmer&amp;rsquo;s hat, I don&amp;rsquo;t really have time or desire to write my own blog engine either. So I was looking for some kind of a middle ground.&lt;/p&gt;
 
 &lt;p&gt;To me the sweet spot seems to be in the static site generators: with this approach you usually get a high performance of a simple static site together with the beauty of Markdown, while still maintaining a freedom to choose how to store the sources and deploy the end result.&lt;/p&gt;
@@ -568,10 +568,10 @@ dotnet run
     
     <item>
       <title>About</title>
-      <link>https://atsvetkov.github.io/about/</link>
+      <link>http://alexandertsvetkov.me/about/</link>
       <pubDate>Fri, 17 Jun 2016 23:00:45 +0200</pubDate>
       
-      <guid>https://atsvetkov.github.io/about/</guid>
+      <guid>http://alexandertsvetkov.me/about/</guid>
       <description>&lt;p&gt;Hi, I&amp;rsquo;m Alex! I&amp;rsquo;ve been working as a software engineer for the last 11 or so years. Currently I&amp;rsquo;m a Technical Lead in a software company in Utrecht, the Netherlands.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve always enjoyed exploring all things .NET and creating web applications. When I&amp;rsquo;m not coding, I&amp;rsquo;m playing the guitar, learning electronic music production and surfing.&lt;/p&gt;
@@ -580,10 +580,10 @@ dotnet run
     
     <item>
       <title>Never too late</title>
-      <link>https://atsvetkov.github.io/2016/06/never-too-late/</link>
+      <link>http://alexandertsvetkov.me/2016/06/never-too-late/</link>
       <pubDate>Fri, 17 Jun 2016 22:52:13 +0200</pubDate>
       
-      <guid>https://atsvetkov.github.io/2016/06/never-too-late/</guid>
+      <guid>http://alexandertsvetkov.me/2016/06/never-too-late/</guid>
       <description>&lt;p&gt;It wasn&amp;rsquo;t until this year that I decided to start blogging. A lot of things changed since moving from Russia to the Netherlands more than a year ago, in both life and work. At my current employer we are undergoing a tough and sometimes painful process of migrating our software architecture and development process to a presumably better state - and I am right in the middle of it. There are plenty discussions and experiments, some of them I hope might be worth sharing with the community.&lt;/p&gt;
 
 &lt;p&gt;My initial goal is to write at least one post a week (feel free to poke me if I don&amp;rsquo;t). And I think in the actual first one (&lt;em&gt;every programmer&amp;rsquo;s posts should be zero-indexed, right?&lt;/em&gt;) I am going to describe the technical parts behind this very blog.&lt;/p&gt;
