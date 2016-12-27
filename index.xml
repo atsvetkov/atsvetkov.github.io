@@ -2,25 +2,203 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Surfing the code</title>
-    <link>http://alexandertsvetkov.me/</link>
+    <link>https://alexandertsvetkov.me/</link>
     <description>Recent content on Surfing the code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Dec 2016 21:40:04 +0100</lastBuildDate>
-    <atom:link href="http://alexandertsvetkov.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Dec 2016 12:58:59 +0100</lastBuildDate>
+    <atom:link href="https://alexandertsvetkov.me/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Coffee and Links - 3</title>
-      <link>http://alexandertsvetkov.me/2016/12/coffee-and-links---3/</link>
-      <pubDate>Fri, 16 Dec 2016 21:40:04 +0100</pubDate>
+      <title>C-Sharp 7.0 and Visual Studio 2017 RC</title>
+      <link>https://alexandertsvetkov.me/2016/12/c-sharp-7.0-and-visual-studio-2017-rc/</link>
+      <pubDate>Sun, 25 Dec 2016 12:58:59 +0100</pubDate>
       
-      <guid>http://alexandertsvetkov.me/2016/12/coffee-and-links---3/</guid>
+      <guid>https://alexandertsvetkov.me/2016/12/c-sharp-7.0-and-visual-studio-2017-rc/</guid>
       <description>
 
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;http://alexandertsvetkov.me/images/coffee-and-links-3.jpg&#34; /&gt;
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/csharp_7_visual_studio_2017_rc.jpg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;A new Release Candidate of Visual Studio 2017 &lt;a href=&#34;https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes&#34;&gt;has been released recently&lt;/a&gt;, featuring faster installation and solution loading, an updated project file format, improved IntelliSense, better navigation, and some new built-in refactoring actions covering a significant part of commonly used ReSharper functionality. In this post we will look briefly into these items and will also do a small coding exercise to demonstrate some cool features of C# 7.0.&lt;/p&gt;
+
+&lt;h3 id=&#34;installation:3137a70a53e439dd5675a43131d28d7c&#34;&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;If you want to try it out today, just go to the &lt;a href=&#34;https://www.visualstudio.com/vs/visual-studio-2017-rc/&#34;&gt;Visual Studio 2017 RC page&lt;/a&gt; and download the installer of a specific edition (I&amp;rsquo;m testing the Enterprise version). The installer itself is tiny and will download the necessary files during the installation. This is actually an important point: this version of Visual Studio has a slightly different way of configuring features, called &lt;a href=&#34;https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio#install-workloads&#34;&gt;workloads&lt;/a&gt; (a pack of related features for a certain type of development work, like web, data science etc.)&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/visual-studio-workloads.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;I selected &amp;ldquo;Web development&amp;rdquo; workload only, which resulted in a much smaller footprint on the disk: the whole installation folder is now 1.5Gb size, while my current Visual Studio 2015 is occupying more than 5GB. That&amp;rsquo;s a huge win, and it also apparently contributes to the reduced VS starting time.&lt;/p&gt;
+
+&lt;h3 id=&#34;new-project-file-format:3137a70a53e439dd5675a43131d28d7c&#34;&gt;New project file format&lt;/h3&gt;
+
+&lt;p&gt;If you were following the whole .NET Core story, you know that for the cross-platform version of the framework Microsoft came up with &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/articles/core/tools/project-json&#34;&gt;a new JSON-based project file&lt;/a&gt;. It was a beautiful idea and a great improvement compared to the XML craziness of the old *.csproj. One the coolest parts of the &lt;code&gt;project.json&lt;/code&gt; is a unified system of project/package references and convention-based inclusion of source code files (no explicit list of individual files, like it was in the older .csproj format). These changes made the JSON project file relatively short and human-readable.&lt;/p&gt;
+
+&lt;p&gt;But then came a realization that the old project files were part of the huge ecosystem of existing MSBuild tools, so rewriting &lt;em&gt;everything&lt;/em&gt; from XML to JSON would be an enourmous effort, not only for Microsoft itself, but also for third-party tools authors. So, long story short, &lt;code&gt;project.json&lt;/code&gt; is no more, and there is a new and improved .csproj format coming. (For a more detailed explanation and reasoning behind this change check out &lt;a href=&#34;https://www.stevejgordon.co.uk/project-json-replaced-by-csproj&#34;&gt;this Steve Gordon&amp;rsquo;s blog post&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;When you create a new project in Visual Studio 2017 RC, it is already using the &lt;em&gt;new&lt;/em&gt; .csproj (&lt;a href=&#34;https://blogs.msdn.microsoft.com/dotnet/2016/11/16/announcing-net-core-tools-msbuild-alpha/&#34;&gt;still an alpha version&lt;/a&gt; and subject to change), which looks like this:&lt;/p&gt;
+
+&lt;script src=&#34;//gist.github.com/atsvetkov/4b5e0efdc8612b7746e57f045d2dc37a.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/visual-studio-project-file.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;This is the moment when you say, &lt;em&gt;&amp;ldquo;Hold on, do I really see you editing the project file and having the project loaded at the same time?&amp;rdquo;&lt;/em&gt;. Yes! Finally we don&amp;rsquo;t need to unload the project when manually changing .csproj. This thing alone is a big time-saver, I&amp;rsquo;m really happy about it.&lt;/p&gt;
+
+&lt;h3 id=&#34;c-7-0-features:3137a70a53e439dd5675a43131d28d7c&#34;&gt;C# 7.0 features&lt;/h3&gt;
+
+&lt;p&gt;Now to the exercise. Let&amp;rsquo;s imagine we need to implement an integer parser, so given a string input &lt;code&gt;&amp;quot;123&amp;quot;&lt;/code&gt;, it will return an &lt;code&gt;int&lt;/code&gt; with value &lt;code&gt;123&lt;/code&gt;. We&amp;rsquo;ll create it as a static &lt;code&gt;IntegerParser&lt;/code&gt; class with &lt;code&gt;TryParse&lt;/code&gt; method, with some additional requirements:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;TryParse&lt;/code&gt; should accept an &lt;code&gt;object&lt;/code&gt; and return a &lt;code&gt;bool&lt;/code&gt; depending whether parsing was sucessful or not (a common pattern in many .NET classes)&lt;/li&gt;
+&lt;li&gt;if parsing succeeds, the resulting &lt;code&gt;int&lt;/code&gt; will be assigned to an &lt;code&gt;out&lt;/code&gt; argument&lt;/li&gt;
+&lt;li&gt;supported types are &lt;code&gt;string&lt;/code&gt; and &lt;code&gt;int&lt;/code&gt; (so &lt;code&gt;TryParse&lt;/code&gt; will have to check the actual type), in other cases an exception will be thrown.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Obviously these are weird and artificial requirements, but hopefully they will allow us to find some places where the new syntax of C# 7.0 makes the code more concise and expressive.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s how a quick implementation could look like:&lt;/p&gt;
+
+&lt;script src=&#34;//gist.github.com/atsvetkov/f0e8f82a9590ceda0edc0b157f11b68d.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Running this produces the expected results:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Parsed System.Int32 123, got 123
+Parsed System.String 2017, got 2017
+Could not parse System.String -1
+Could not parse System.String 1a2b3c
+Error when parsing: IntegerParser only accepts strings ans integers, type &#39;System.Char&#39; is not supported
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Several things here leave to be desired:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;all those &lt;code&gt;if&lt;/code&gt;&amp;rsquo;s for type checking look very verbose and desperately want to be converted to a &lt;code&gt;switch&lt;/code&gt; statement, but unfortunately, &lt;code&gt;switch&lt;/code&gt; only works with &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/exx3b86w.aspx&#34;&gt;integral types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;private method &lt;code&gt;ParseString&lt;/code&gt; is only used in one place (maybe we actually &lt;em&gt;want&lt;/em&gt; it to be usable only in one place), so having a separate method declaration might seem an overkill (it&amp;rsquo;s pretty normal for C# developers, but could look strange for JavaScript or other functional languages developer, where &lt;a href=&#34;https://en.wikipedia.org/wiki/First-class_function&#34;&gt;functions are first-class citizen&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;all this logic in &lt;code&gt;Main&lt;/code&gt; where we have to declare a variable for the &lt;code&gt;out&lt;/code&gt; result, check the &lt;code&gt;bool&lt;/code&gt; result, and only in case of success we are actually interested in this value; it would be nicer to just get a result back, potentially multiple values at once.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see what C# 7.0 can offer to tackle these issues.&lt;/p&gt;
+
+&lt;h3 id=&#34;pattern-matching:3137a70a53e439dd5675a43131d28d7c&#34;&gt;Pattern matching&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Pattern_matching&#34;&gt;Pattern matching&lt;/a&gt; is common in functional languages like &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/pattern-matching&#34;&gt;F#&lt;/a&gt; or &lt;a href=&#34;http://docs.scala-lang.org/tutorials/tour/pattern-matching.html&#34;&gt;Scala&lt;/a&gt; or &lt;a href=&#34;http://elixir-lang.org/getting-started/pattern-matching.html&#34;&gt;Elixir&lt;/a&gt;, but C# itself is now getting more functional too. C# 7.0 brings in support for &lt;em&gt;type pattern matching&lt;/em&gt; in &lt;code&gt;if&lt;/code&gt; and &lt;code&gt;switch&lt;/code&gt; statements, meaning that we can now have much richer &lt;code&gt;switch&lt;/code&gt; behaviour. This allows us to rewrite our &lt;code&gt;TryParse&lt;/code&gt; method like this:&lt;/p&gt;
+
+&lt;script src=&#34;//gist.github.com/atsvetkov/b5a903fad4daf8874f407c5f9cdb2456.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;The code is a bit terser now and doesn&amp;rsquo;t have ugly casts.&lt;/p&gt;
+
+&lt;h3 id=&#34;local-functions:3137a70a53e439dd5675a43131d28d7c&#34;&gt;Local functions&lt;/h3&gt;
+
+&lt;p&gt;Yes, you guessed it - now functions can be defined inside a method. We could do something similar in C# 6.0 with &lt;em&gt;lambda expressions&lt;/em&gt;, but they have some limitations compared to normal methods (no &lt;code&gt;out&lt;/code&gt;, &lt;code&gt;ref&lt;/code&gt;, &lt;code&gt;params&lt;/code&gt; or optional parameters, cannot be generic). And obviously any &lt;code&gt;Func&lt;/code&gt; instance would mean an extra memory allocation, creating unnecesary pressure on garbage collector.&lt;/p&gt;
+
+&lt;p&gt;With local functions we can rewrite our &lt;code&gt;TryParse&lt;/code&gt; method even further, including &lt;code&gt;ParseString&lt;/code&gt; in the body of the method:&lt;/p&gt;
+
+&lt;script src=&#34;//gist.github.com/atsvetkov/82eef08eb8cd6bdb84e86344d94f096c.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Again, not that it makes a lot of sense to write it this way, but at least there is this option to declare small helper functions exactly where they are needed.&lt;/p&gt;
+
+&lt;p&gt;Note that this is not some kind of crazy magic, the compiler will actually convert this local function into a &lt;code&gt;private static&lt;/code&gt; method, but from code perspective it will only be accessible in scope of the method it was defined in.&lt;/p&gt;
+
+&lt;h3 id=&#34;out-variables:3137a70a53e439dd5675a43131d28d7c&#34;&gt;Out variables&lt;/h3&gt;
+
+&lt;p&gt;Having to pre-declare a variable for an &lt;code&gt;out&lt;/code&gt; parameter has always seemed like a code smell to me. In case of the popular &lt;code&gt;TryXXX&lt;/code&gt; pattern, obviously, I&amp;rsquo;m only interested in the &lt;em&gt;value&lt;/em&gt; of the variable, if my &lt;code&gt;TryXXX&lt;/code&gt; check returned &lt;code&gt;true&lt;/code&gt;, so why bother defining it in outer scope? Luckily, in C# 7.0 this is fixed! Visual Studio 2017 RC even displays a quick action lightbulb to suggest inlining this variable:&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/visual-studio-out-variable.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;This allows to remove the pre-declaration of the &lt;code&gt;out&lt;/code&gt; variable, so that the compiler can declare it on-the-fly. Just one line less, but reads much better, I think:&lt;/p&gt;
+
+&lt;script src=&#34;//gist.github.com/atsvetkov/d2380a846b78cccd8fab1bf8ec1fcc6f.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;This &lt;code&gt;result&lt;/code&gt; variable is now &lt;em&gt;declared&lt;/em&gt; and &lt;em&gt;assigned&lt;/em&gt; as one statement, leaving the implementation details to the compiler.&lt;/p&gt;
+
+&lt;h3 id=&#34;tuple-types-and-deconstruction:3137a70a53e439dd5675a43131d28d7c&#34;&gt;Tuple types and deconstruction&lt;/h3&gt;
+
+&lt;p&gt;Now, all this tweaking of &lt;code&gt;out&lt;/code&gt; variables and playing with &lt;code&gt;TryParse&lt;/code&gt; syntax is only hiding the real problem: essentially we want our method to return &lt;em&gt;two&lt;/em&gt; values at once: the success/failure flag and the result itself. Since C# methods don&amp;rsquo;t support returning multiple results, there are two common solutions to this: &lt;code&gt;out&lt;/code&gt;/&lt;code&gt;ref&lt;/code&gt; parameters or a special result type. We could indeed define a type which would hold two values we need and then check it from the client code:&lt;/p&gt;
+
+&lt;script src=&#34;//gist.github.com/atsvetkov/67372886923c30069ca7c3185346142a.js&#34;&gt;&lt;/script&gt;
+
+&lt;script src=&#34;//gist.github.com/atsvetkov/ef7185260bea5025e24e20945dcca49e.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;But if we only need this result type for this single method and never reuse it anywhere else, this type declaration feels a bit redundant. If a class is only used once, maybe it doesn&amp;rsquo;t deserve to be explicitly declared. In fact, since .NET Framework 4.0 we have &lt;code&gt;Tuple&lt;/code&gt; class to the rescue, but it is a bit cumbersome to use with these meaningless &lt;code&gt;Item1&lt;/code&gt;, &lt;code&gt;Item2&lt;/code&gt; etc. property names.&lt;/p&gt;
+
+&lt;p&gt;C# 7.0 makes tuples a first class citizen in syntax and compilation, so we can actually write methods which &lt;em&gt;look&lt;/em&gt; like they return multiple values. Under the hood, again, the compiler will use tuples, but the code will read much better. Let&amp;rsquo;s see how we can rewrite the &lt;code&gt;TryParse&lt;/code&gt; one last time:&lt;/p&gt;
+
+&lt;script src=&#34;//gist.github.com/atsvetkov/c9353788acac9eab9f5851bda321272f.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;(Note: for this to work you would need to install an additional &lt;a href=&#34;https://www.nuget.org/packages/System.ValueTuple/&#34;&gt;System.ValueTuple NuGet package&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;I think this code shows the &lt;em&gt;intent&lt;/em&gt; of the function much better, it is immediately visible what the return type(s) will be.&lt;/p&gt;
+
+&lt;p&gt;The calling code can now be rewritten to assign the returned &lt;code&gt;bool&lt;/code&gt; and &lt;code&gt;int&lt;/code&gt; values to two variables in just one very readable line (this is called &lt;em&gt;deconstruction&lt;/em&gt; or &lt;em&gt;destructuring&lt;/em&gt;):&lt;/p&gt;
+
+&lt;script src=&#34;//gist.github.com/atsvetkov/67a25415fe660c70498567c6261fc187.js&#34;&gt;&lt;/script&gt;
+
+&lt;h3 id=&#34;new-refactorings:3137a70a53e439dd5675a43131d28d7c&#34;&gt;New refactorings&lt;/h3&gt;
+
+&lt;p&gt;You might have noticed that &lt;code&gt;IntegerParser&lt;/code&gt; class is defined in the same file where &lt;code&gt;Program&lt;/code&gt; lives. This is definitely not the best practice, so normally I would use ReSharper to apply &lt;em&gt;Move Type to Another File&lt;/em&gt; refactoring. This kind of handy tricks have always been the reason I would stick to ReSharper, even though I never liked to be so dependent on a specific tool.&lt;/p&gt;
+
+&lt;p&gt;Well, now Visual Studio 2017 RC can do this too!&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/visual-studio-extract-to-file-refactoring.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;https://msdn.microsoft.com/magazine/mt790181&#34;&gt;Read more&lt;/a&gt; about refactorings and other productivity improvements.&lt;/p&gt;
+
+&lt;h3 id=&#34;summary:3137a70a53e439dd5675a43131d28d7c&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;We went through a very artificial coding exercise, which hopefully showed how some of the new C# 7.0 features can make code a bit more readable and expressive. Besides language improvements, the new Visual Studio 2017 already looks like a great step towards better IDE performance and productivity. I am really looking forward to the final release in 2017!&lt;/p&gt;
+
+&lt;p&gt;The source code of this silly integer parsing solution is available at &lt;a href=&#34;https://github.com/atsvetkov/csharp-7-vs-2017-short-demo&#34;&gt;https://github.com/atsvetkov/csharp-7-vs-2017-short-demo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading and Merry Christmas!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>coffee and links 3</title>
+      <link>https://alexandertsvetkov.me/2016/12/coffee-and-links-3/</link>
+      <pubDate>Fri, 16 Dec 2016 21:40:04 +0100</pubDate>
+      
+      <guid>https://alexandertsvetkov.me/2016/12/coffee-and-links-3/</guid>
+      <description>
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/coffee-and-links-3.jpg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -35,7 +213,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;http://alexandertsvetkov.me/images/google_revenue.png&#34; /&gt;
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/google_revenue.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -82,7 +260,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;http://alexandertsvetkov.me/images/resharper_heap_allocations.png&#34; /&gt;
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/resharper_heap_allocations.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -97,7 +275,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;http://alexandertsvetkov.me/images/radio_garden.png&#34; /&gt;
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/radio_garden.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -132,14 +310,14 @@
     
     <item>
       <title>Practice makes perfect</title>
-      <link>http://alexandertsvetkov.me/2016/12/practice-makes-perfect/</link>
+      <link>https://alexandertsvetkov.me/2016/12/practice-makes-perfect/</link>
       <pubDate>Tue, 06 Dec 2016 21:50:43 +0100</pubDate>
       
-      <guid>http://alexandertsvetkov.me/2016/12/practice-makes-perfect/</guid>
+      <guid>https://alexandertsvetkov.me/2016/12/practice-makes-perfect/</guid>
       <description>
 &lt;figure &gt;
     
-        &lt;img src=&#34;http://alexandertsvetkov.me/images/practice_makes_perfect.jpg&#34; /&gt;
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/practice_makes_perfect.jpg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -191,7 +369,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;http://alexandertsvetkov.me/images/advent_of_code.png&#34; /&gt;
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/advent_of_code.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -204,11 +382,11 @@
     </item>
     
     <item>
-      <title>Coffee and Links - 2</title>
-      <link>http://alexandertsvetkov.me/2016/11/coffee-and-links---2/</link>
+      <title>coffee and links 2</title>
+      <link>https://alexandertsvetkov.me/2016/11/coffee-and-links-2/</link>
       <pubDate>Sat, 19 Nov 2016 14:17:47 +0100</pubDate>
       
-      <guid>http://alexandertsvetkov.me/2016/11/coffee-and-links---2/</guid>
+      <guid>https://alexandertsvetkov.me/2016/11/coffee-and-links-2/</guid>
       <description>
 
 &lt;p&gt;This was a week of &lt;a href=&#34;https://connectevent.microsoft.com&#34;&gt;Microsoft Connect 2016&lt;/a&gt;, an event where yet another bunch of cool announcements were made. However, being a good software engineer means not restricting yourself to a single technology, so I have some awesome non-Microsoft things to share as well. Let&amp;rsquo;s jump straight in!&lt;/p&gt;
@@ -216,7 +394,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;http://alexandertsvetkov.me/images/coffee-and-links-2.jpg&#34; /&gt;
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/coffee-and-links-2.jpg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -255,7 +433,7 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;http://alexandertsvetkov.me/images/iis_manager_preview.png&#34; /&gt;
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/iis_manager_preview.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -287,7 +465,7 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
 &lt;p&gt;
 &lt;figure &gt;
     
-        &lt;img src=&#34;http://alexandertsvetkov.me/images/twitter_vi.png&#34; /&gt;
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/twitter_vi.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -296,11 +474,11 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
     </item>
     
     <item>
-      <title>Coffee and Links - 1</title>
-      <link>http://alexandertsvetkov.me/2016/11/coffee-and-links---1/</link>
+      <title>coffee and links 1</title>
+      <link>https://alexandertsvetkov.me/2016/11/coffee-and-links-1/</link>
       <pubDate>Sat, 12 Nov 2016 15:00:54 +0100</pubDate>
       
-      <guid>http://alexandertsvetkov.me/2016/11/coffee-and-links---1/</guid>
+      <guid>https://alexandertsvetkov.me/2016/11/coffee-and-links-1/</guid>
       <description>
 
 &lt;p&gt;Sometimes I find interesting things on the web, which don&amp;rsquo;t belong to a single category. Just random articles or news about technology. Since I still want to share these findings and because I normally do this kind of reading at the start of the day, I will be publishing this as a &lt;em&gt;Coffee and links&lt;/em&gt; digest.&lt;/p&gt;
@@ -308,7 +486,7 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;http://alexandertsvetkov.me/images/coffee-and-links-1.jpg&#34; /&gt;
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/coffee-and-links-1.jpg&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -327,7 +505,7 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;http://alexandertsvetkov.me/images/AcclaimBadge.png&#34; /&gt;
+        &lt;img src=&#34;https://alexandertsvetkov.me/images/AcclaimBadge.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -369,10 +547,10 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
     
     <item>
       <title>Some facts about WiX</title>
-      <link>http://alexandertsvetkov.me/2016/10/some-facts-about-wix/</link>
+      <link>https://alexandertsvetkov.me/2016/10/some-facts-about-wix/</link>
       <pubDate>Thu, 27 Oct 2016 22:20:54 +0200</pubDate>
       
-      <guid>http://alexandertsvetkov.me/2016/10/some-facts-about-wix/</guid>
+      <guid>https://alexandertsvetkov.me/2016/10/some-facts-about-wix/</guid>
       <description>&lt;p&gt;Before we start, let me ask you a question: do you know what is the oldest still active open source .NET project?&lt;/p&gt;
 
 &lt;p&gt;Today I was again listening to awesome &lt;a href=&#34;https://www.dotnetrocks.com/&#34;&gt;.NET Rocks&lt;/a&gt; podcast and the guest was Rob Mensching, the guy behind &lt;a href=&#34;http://wixtoolset.org/&#34;&gt;Wix Toolset&lt;/a&gt;. WiX provides a bunch of tools to simplify the creation of MSI packages for Windows, and as far as I know, it is one of the most popular open-source implementations in that area. And it is also free! We use it for the product I am currently working on. Hell, even Microsoft is using it: &lt;a href=&#34;https://github.com/dotnet/cli/blob/rel/1.0.0/packaging/windows/clisdk/dotnet.wxs&#34;&gt;see for yourself&lt;/a&gt; that the current .NET Core installer is actually built with WiX! In fact, Rob Mensching used to work in Microsoft on setup and deployment for Office, Windows and Visual Studio. Obviously, he knows more about installers than most people do, enough to build a business around it. So he is now a CEO and a co-founder of &lt;a href=&#34;https://www.firegiant.com/&#34;&gt;Fire Giant&lt;/a&gt;, a company providing commercial support for WiX Toolset.&lt;/p&gt;
@@ -412,10 +590,10 @@ var x = map(opt, v =&amp;gt; v * 2); // static method to mimic a globally availa
     
     <item>
       <title>Current state of .NET</title>
-      <link>http://alexandertsvetkov.me/2016/10/current-state-of-.net/</link>
+      <link>https://alexandertsvetkov.me/2016/10/current-state-of-.net/</link>
       <pubDate>Tue, 18 Oct 2016 22:22:41 +0200</pubDate>
       
-      <guid>http://alexandertsvetkov.me/2016/10/current-state-of-.net/</guid>
+      <guid>https://alexandertsvetkov.me/2016/10/current-state-of-.net/</guid>
       <description>&lt;p&gt;Imagine a software developer working in a typical enterprise IT company. Let&amp;rsquo;s call him Johnny. Most of the time Johnny works with .NET applications. He&amp;rsquo;s been writing web apps since the days of ASP (he feels pretty comfortable with Web Forms and IIS after all these years), but he was always too busy doing &lt;em&gt;important things&lt;/em&gt; and never really had time to follow the news in the industry. Yeah, he heard some folks in another department are using &amp;ldquo;MVC&amp;rdquo;, and somebody mentioned something like &amp;ldquo;core&amp;rdquo; or &amp;ldquo;standard&amp;rdquo;. And some fellow .NET developers were even talking about Linux at the coffee machine. What? &lt;em&gt;.NET&lt;/em&gt; and &lt;em&gt;Linux&lt;/em&gt;? Weird!&lt;/p&gt;
 
 &lt;p&gt;Or is it?&lt;/p&gt;
@@ -467,16 +645,16 @@ dotnet run
 
 &lt;p&gt;Be like Johnny! Embrace change and learn amazing things!&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;(For some suggestions about which news to follow, take a look into my previous post about &lt;a href=&#34;http://alexandertsvetkov.me/2016/10/staying-up-to-date-with-software-development-trends/&#34;&gt;Staying up-to-date with software development trends&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(For some suggestions about which news to follow, take a look into my previous post about &lt;a href=&#34;https://alexandertsvetkov.me/2016/10/staying-up-to-date-with-software-development-trends/&#34;&gt;Staying up-to-date with software development trends&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Staying up-to-date with software development trends</title>
-      <link>http://alexandertsvetkov.me/2016/10/staying-up-to-date-with-software-development-trends/</link>
+      <link>https://alexandertsvetkov.me/2016/10/staying-up-to-date-with-software-development-trends/</link>
       <pubDate>Sun, 16 Oct 2016 16:51:55 +0200</pubDate>
       
-      <guid>http://alexandertsvetkov.me/2016/10/staying-up-to-date-with-software-development-trends/</guid>
+      <guid>https://alexandertsvetkov.me/2016/10/staying-up-to-date-with-software-development-trends/</guid>
       <description>
 
 &lt;p&gt;Earlier this year I was assigned to a role of a technical lead in a small development team. This happened after working in the same team for more than a year and then being a part of a two-person architecture team focused on evaluating the microservices approach for a couple of months. At my current employer things are changing quickly and people are free to figure out what the idea actually was. So I am still looking for the meaning of the tech lead role, but definitely enjoying it already.&lt;/p&gt;
@@ -550,10 +728,10 @@ dotnet run
     
     <item>
       <title>Building a blog with Hugo, GitHub, Travis-CI and DigitalOcean - Part 1</title>
-      <link>http://alexandertsvetkov.me/2016/08/building-a-blog-with-hugo-github-travis-ci-and-digitalocean---part-1/</link>
+      <link>https://alexandertsvetkov.me/2016/08/building-a-blog-with-hugo-github-travis-ci-and-digitalocean---part-1/</link>
       <pubDate>Sun, 28 Aug 2016 23:01:21 +0200</pubDate>
       
-      <guid>http://alexandertsvetkov.me/2016/08/building-a-blog-with-hugo-github-travis-ci-and-digitalocean---part-1/</guid>
+      <guid>https://alexandertsvetkov.me/2016/08/building-a-blog-with-hugo-github-travis-ci-and-digitalocean---part-1/</guid>
       <description>&lt;p&gt;&lt;em&gt;With great power comes great responsibility&lt;/em&gt;, they say. In case of being a programmer, this sometimes means that achieving simple things may get complicated. I understand that WordPress essentially won as the blogging platform and you can setup your hosted blog in almost no time&amp;hellip; but then where is all the fun? On the other hand, putting on a pragmatic programmer&amp;rsquo;s hat, I don&amp;rsquo;t really have time or desire to write my own blog engine either. So I was looking for some kind of a middle ground.&lt;/p&gt;
 
 &lt;p&gt;To me the sweet spot seems to be in the static site generators: with this approach you usually get a high performance of a simple static site together with the beauty of Markdown, while still maintaining a freedom to choose how to store the sources and deploy the end result.&lt;/p&gt;
@@ -568,10 +746,10 @@ dotnet run
     
     <item>
       <title>About</title>
-      <link>http://alexandertsvetkov.me/about/</link>
+      <link>https://alexandertsvetkov.me/about/</link>
       <pubDate>Fri, 17 Jun 2016 23:00:45 +0200</pubDate>
       
-      <guid>http://alexandertsvetkov.me/about/</guid>
+      <guid>https://alexandertsvetkov.me/about/</guid>
       <description>&lt;p&gt;Hi, I&amp;rsquo;m Alex! I&amp;rsquo;ve been working as a software engineer for the last 11 or so years. Currently I&amp;rsquo;m a Technical Lead in a software company in Utrecht, the Netherlands.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve always enjoyed exploring all things .NET and creating web applications. When I&amp;rsquo;m not coding, I&amp;rsquo;m playing the guitar, learning electronic music production and surfing.&lt;/p&gt;
@@ -580,10 +758,10 @@ dotnet run
     
     <item>
       <title>Never too late</title>
-      <link>http://alexandertsvetkov.me/2016/06/never-too-late/</link>
+      <link>https://alexandertsvetkov.me/2016/06/never-too-late/</link>
       <pubDate>Fri, 17 Jun 2016 22:52:13 +0200</pubDate>
       
-      <guid>http://alexandertsvetkov.me/2016/06/never-too-late/</guid>
+      <guid>https://alexandertsvetkov.me/2016/06/never-too-late/</guid>
       <description>&lt;p&gt;It wasn&amp;rsquo;t until this year that I decided to start blogging. A lot of things changed since moving from Russia to the Netherlands more than a year ago, in both life and work. At my current employer we are undergoing a tough and sometimes painful process of migrating our software architecture and development process to a presumably better state - and I am right in the middle of it. There are plenty discussions and experiments, some of them I hope might be worth sharing with the community.&lt;/p&gt;
 
 &lt;p&gt;My initial goal is to write at least one post a week (feel free to poke me if I don&amp;rsquo;t). And I think in the actual first one (&lt;em&gt;every programmer&amp;rsquo;s posts should be zero-indexed, right?&lt;/em&gt;) I am going to describe the technical parts behind this very blog.&lt;/p&gt;
